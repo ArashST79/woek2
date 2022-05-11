@@ -1,9 +1,11 @@
+package dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
     public class DBHandler {
-        private static final String JDBC_URL = "jdbc:h2:~/test3;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE";
+        private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/test2";
         private static final String JDBC_DRIVER = "org.h2.Driver";
         private static final String USERNAME = "sa";
         private static final String PASSWORD = "123";

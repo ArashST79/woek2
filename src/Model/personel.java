@@ -1,5 +1,6 @@
 package Model;
 
+import javax.swing.text.StyledEditorKit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,11 +8,35 @@ import java.util.List;
 public class personel {
     private String name;
     private String nationalCode;
-    private String age;
+    private int age;
+
+    public boolean isHasVacation() {
+        return hasVacation;
+    }
+
     private boolean hasVacation;
     private List<Boolean> vacations;
-    public static List<personel> personels = new ArrayList<>();
-    public static HashMap<personel, List<Boolean> > unconfirmedVacations = new HashMap<personel, List<Boolean>>();
+
+    public static List<personel> getPersonels() {
+        return personels;
+    }
+
+    public static void addPersonel(personel p) {
+        personels.add(p);
+    }
+    public static void addUnconfirmedVacation(personel p, List<Boolean> vacations){
+        unconfirmedVacations.put(p,vacations);
+    }
+    public static HashMap<personel, List<Boolean>> getUnconfirmedVacations() {
+        return unconfirmedVacations;
+    }
+
+    public static void setUnconfirmedVacations(HashMap<personel, List<Boolean>> unconfirmedVacations) {
+        personel.unconfirmedVacations = unconfirmedVacations;
+    }
+
+    private static List<personel> personels = new ArrayList<>();
+    private static HashMap<personel, List<Boolean> > unconfirmedVacations = new HashMap<personel, List<Boolean>>();
     public boolean isConfirmedVacation() {
         return confirmedVacation;
     }
@@ -21,7 +46,7 @@ public class personel {
     }
 
     private boolean confirmedVacation;
-    public personel(String name, String age, String nationalCode){
+    public personel(String name, int age, String nationalCode){
         this.name = name;
         this.age = age;
         this.nationalCode = nationalCode;
@@ -54,11 +79,11 @@ public class personel {
         this.nationalCode = nationalCode;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

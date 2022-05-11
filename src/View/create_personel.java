@@ -8,11 +8,11 @@ public class create_personel implements menu {
         System.out.println("please enter username");
         String userName = in.nextLine();
         System.out.println("please enter age");
-        String age = in.nextLine();
+        int age = Integer.parseInt(in.nextLine());
         System.out.println("please enter national code");
         String nationalCode = in.nextLine();
         personel p = new personel(userName,age,nationalCode);
-        personel.personels.add(p);
+        personel.addPersonel(p);
         System.out.println("successfully created");
         System.out.println("please enter if you want to go back either print {1} if you want to create antother Model.personel");
         String t = in.nextLine();

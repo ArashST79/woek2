@@ -10,7 +10,7 @@ public class confirm_vacation implements menu {
     public void start() {
         System.out.println("please confirm each of the vacations you want or you can enter to go back");
         for (Map.Entry<personel, List<Boolean>> unconfirmedVacations :
-                personel.unconfirmedVacations.entrySet()) {
+                personel.getUnconfirmedVacations().entrySet()) {
             personel p = unconfirmedVacations.getKey();
             System.out.println(p.getNationalCode() + ", "+ p.getName()+"   :   "+p.getVacationsString());
         }
@@ -22,6 +22,6 @@ public class confirm_vacation implements menu {
         personel p = personel.getPersonelByCode(input);
         System.out.println("you have confirmed " + p.getName());
         p.setHasVacation(true);
-        personel.unconfirmedVacations.remove(p);
+        personel.getUnconfirmedVacations().remove(p);
     }
 }

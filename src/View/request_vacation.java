@@ -23,7 +23,7 @@ public class request_vacation implements menu{
                 }
             }
         }
-        personel.unconfirmedVacations.put(p,p.getVacations());
+        personel.addUnconfirmedVacation(p,p.getVacations());
         String s = String.join(",",inputs);
         viewHandler.situ = viewHandler.situation.mainMenu;
         System.out.println("vacations has been requested for "+s);
