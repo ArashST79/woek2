@@ -12,7 +12,7 @@ public class dataFetcher {
     static Connection conn;
     static Statement stmt;
 
-    static void startFetching() {
+    public static void startFetching() {
         DBHandler dbHandler = new DBHandler();
         dbHandler.openConnection();
         conn = dbHandler.getConn();

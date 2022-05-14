@@ -1,5 +1,7 @@
 package Model;
 
+import service.personelService;
+
 import javax.swing.text.StyledEditorKit;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +57,8 @@ public class personel {
         for (int i = 0; i < 10; i++) {
             vacations.add(false);
         }
+        personelService personelService = new personelService();
+        personelService.createPersonel(this);
     }
     public static personel getPersonelByCode(String code){
         for(personel p: personels){

@@ -9,6 +9,7 @@ import java.sql.Statement;
 public class personelDao {
     DBHandler dbHandler = new DBHandler();
     public void createPersonel(personel p){
+        dbHandler.openConnection();
         Connection c = dbHandler.getConn();
         if(c!=null){
             try {

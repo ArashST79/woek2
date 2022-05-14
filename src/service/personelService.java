@@ -5,6 +5,7 @@ import dao.personelDao;
 
 public class personelService {
     public void createPersonel(personel p){
-        personelDao per
+        personelDao personelDao = new personelDao();
+        personelDao.createPersonel(p);
     }
 }
